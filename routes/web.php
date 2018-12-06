@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+Route::get('home', 'HomeController@home');
+Route::get('about', 'HomeController@about');
+Route::get('rooms', 'HomeController@rooms');
+Route::get('dining', 'HomeController@dining');
+Route::get('booking', 'HomeController@booking');
+Route::get('amenities', 'HomeController@amenities');
+Route::get('contact', 'HomeController@contact');
+
