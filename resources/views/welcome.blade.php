@@ -35,6 +35,9 @@
 </head>
 <body>
 @include('_header')
+@if(!Request::is('home') && !Request::is('login'))
+    @include('_carousel')
+@endif
 @yield('_content')
 @include('_footer')
 

@@ -8,9 +8,6 @@
                 <div class="row slider-text align-items-center justify-content-start">
                     <div class="col-md-6 col-sm-12 ftco-animate">
                         <h1 class="mb-4">Welcome to Cozy the paradize near the blue sea</h1>
-                        <p><a href="https://vimeo.com/45830194"
-                              class="btn btn-primary btn-outline-white px-4 py-3 popup-vimeo"><span
-                                        class="ion-ios-play mr-2"></span> Watch Video</a></p>
                     </div>
                 </div>
             </div>
@@ -22,9 +19,6 @@
                 <div class="row slider-text align-items-center justify-content-start">
                     <div class="col-md-6 col-sm-12 ftco-animate">
                         <h1 class="mb-4">Book the perfect accomodations without breaking the bank</h1>
-                        <p><a href="https://vimeo.com/45830194"
-                              class="btn btn-primary btn-outline-white px-4 py-3 popup-vimeo"><span
-                                        class="ion-ios-play mr-2"></span> Watch Video</a></p>
                     </div>
                 </div>
             </div>
@@ -36,15 +30,11 @@
                 <div class="row slider-text align-items-center justify-content-start">
                     <div class="col-md-6 col-sm-12 ftco-animate">
                         <h1 class="mb-4">Lets go to discovering</h1>
-                        <p><a href="https://vimeo.com/45830194"
-                              class="btn btn-primary btn-outline-white px-4 py-3 popup-vimeo"><span
-                                        class="ion-ios-play mr-2"></span> Watch Video</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- END slider -->
 
     <div class="ftco-section-reservation">
         <div class="container">
@@ -390,7 +380,7 @@
     </section>
     <section class="ftco-section-parallax">
         <div class="parallax-img d-flex align-items-md-center align-items-sm-end"
-             style="background-image: url('images/bg_4.jpg');" data-stellar-background-ratio="0.5">
+             style="background-image: url({!! asset('theme/images/bg_4.jpg') !!});" data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row desc d-flex justify-content-center">
@@ -982,56 +972,6 @@
                                     <span class="position">Guests from Italy</span>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <section class="ftco-section bg-light">
-        <div class="container-fluid section-event">
-            <div class="row no-gutters justify-content-center mb-5 pb-5">
-                <div class="col-md-7 text-center heading-section ftco-animate">
-                    <span class="subheading">Join Event</span>
-                    <h2>Our Events</h2>
-                </div>
-            </div>
-            <div class="row d-flex no-gutters">
-                <div class="col-md-6 event-big-img" style="background-image: url({!! asset('theme/images/event.jpg') !!});"></div>
-                <div class="col-md-6 event-wrap">
-                    <div class="event mb-5 ftco-animate">
-                        <div class="text">
-                            <p class="meta p-2 text-center">
-                                <span class="day">12</span>
-                                <span class="mos">July</span>
-                                <span class="year">2018</span>
-                            </p>
-                            <h3><a href="event.html">Big summer meetups</a></h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts</p>
-                            <p>
-                                <a href="#" class="btn btn-primary">Join event</a>
-                                <a href="#" class="btn btn-primary btn-outline-primary">See details</a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="event mb-5 ftco-animate">
-                        <div class="text">
-                            <p class="meta p-2 text-center">
-                                <span class="day">12</span>
-                                <span class="mos">July</span>
-                                <span class="year">2018</span>
-                            </p>
-                            <h3><a href="event.html">Big summer meetups</a></h3>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts</p>
-                            <p>
-                                <a href="#" class="btn btn-primary">Join event</a>
-                                <a href="#" class="btn btn-primary btn-outline-primary">See details</a>
-                            </p>
                         </div>
                     </div>
                 </div>

@@ -14,11 +14,36 @@
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/about', function () {
+    return view('about', ['title' => 'About Us', 'breadcrumb' => 'about']);
+});
+
+Route::get('/rooms', function () {
+    return view('rooms', ['title' => 'Choose Our Rooms', 'breadcrumb' => 'rooms']);
+});
+
+Route::get('/dining', function () {
+    return view('dining', ['title' => 'Discover Our Menus', 'breadcrumb' => 'dining']);
+});
+
+Route::get('/amenities', function () {
+    return view('amenities', ['title' => 'Accomodation & Amenities', 'breadcrumb' => 'amenities']);
+});
+
+Route::get('/booking', function () {
+    return view('booking', ['title' => 'Booking', 'breadcrumb' => 'booking']);
+});
+
+Route::get('/contact', function () {
+    return view('contact', ['title' => 'Contact Us', 'breadcrumb' => 'contact']);
+});
+
+
 Route::get('home', 'HomeController@home');
-Route::get('about', 'HomeController@about');
-Route::get('rooms', 'HomeController@rooms');
-Route::get('dining', 'HomeController@dining');
-Route::get('booking', 'HomeController@booking');
-Route::get('amenities', 'HomeController@amenities');
-Route::get('contact', 'HomeController@contact');
+
 
