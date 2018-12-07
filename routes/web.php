@@ -47,3 +47,8 @@ Route::get('/contact', function () {
 Route::get('home', 'HomeController@home');
 
 
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
