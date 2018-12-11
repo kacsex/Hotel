@@ -17,6 +17,8 @@ class CreateRoomsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger("id_category");
             $table->foreign('id_category')->references('id')->on('room_categories');
+            $table->unsignedInteger("floor");
+            $table->unsignedInteger("number");
             $table->unsignedInteger('active');
             $table->unsignedInteger('booked');
         });
