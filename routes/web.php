@@ -23,9 +23,7 @@ Route::get('/about', function () {
     return view('about', ['title' => 'About Us', 'breadcrumb' => 'about']);
 });
 
-Route::get('/rooms', function () {
-    return view('rooms', ['title' => 'Choose Our Rooms', 'breadcrumb' => 'rooms']);
-});
+Route::get('/rooms', 'RoomController@rooms');
 
 Route::get('/dining', function () {
     return view('dining', ['title' => 'Discover Our Menus', 'breadcrumb' => 'dining']);
