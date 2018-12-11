@@ -18,6 +18,8 @@ class CreateRoomCategoriesTable extends Migration
             $table->string('name', 100);
             $table->unsignedInteger('price');
             $table->unsignedInteger('size');
+            $table->string('description',1000);
+            $table->unsignedInteger('business');
         });
     }
 
