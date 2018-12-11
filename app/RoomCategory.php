@@ -11,5 +11,5 @@ class RoomCategory extends Model
     public $primaryKey = "id";
     public $incrementing = true;
     public $timestamps = false;
-    protected $fillable = ['id', 'name', 'price', 'size'];
+    protected $fillable = ['id', 'name', 'price', 'size', 'description', 'business'];
 }
