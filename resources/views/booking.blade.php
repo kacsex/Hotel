@@ -25,7 +25,8 @@
                                     <label for="">Select Country</label>
                                     <div class="select-wrap one-third">
                                         <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                        <select class="countrypicker form-control" data-live-search="true" data-default="Country of Passport" data-flag="false"></select>
+                                        <select class="countrypicker form-control" data-live-search="true"
+                                                data-default="Country of Passport" data-flag="false"></select>
                                     </div>
                                 </div>
                             </div>
@@ -44,107 +45,65 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="">Phone</label>
-                                    <input type="text" class="form-control" placeholder="Phone">
+                                    <input type="number" class="form-control" placeholder="Phone">
                                 </div>
                             </div>
                         </div>
                         <div class="row mb-5">
                             <div class="col-md-12">
-                                <h2 class="mb-4">Guest Details</h2>
+                                <h2 class="mb-4">Booking details</h2>
                             </div>
                             <div class="col-md-12">
                                 <h3 class="h4">Superior Room - Twin - Best available</h3>
                             </div>
+
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="name">First Name</label>
-                                    <input type="text" class="form-control" placeholder="First Name">
+                                    <label for="check-in">Check in:</label>
+                                    <input type="text" id="checkin_date" class="form-control" placeholder="MM/DD/YYYY">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="check-out">Check out:</label>
+                                    <input type="text" id="checkout_date" class="form-control" placeholder="MM/DD/YYYY">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Number of guests</label>
+                                    <input type="text" class="form-control" placeholder="2">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="name">Last Name</label>
-                                    <input type="text" class="form-control" placeholder="Last Name">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="">Select Country</label>
+                                    <label for="">Select room</label>
                                     <div class="select-wrap one-third">
                                         <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                        <select class="countrypicker form-control" data-live-search="true" data-default="Country of Passport" data-flag="false"></select>
+                                        <select class="countrypicker form-control" data-live-search="true"
+                                                data-default="Country of Passport" data-flag="false"></select>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Date of Birth</label>
-                                    <input type="text" class="form-control" id="birth_date" placeholder="Birth Date">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-5">
-                            <div class="col-md-12">
-                                <h2 class="mb-4">Flight Details</h2>
-                            </div>
-                            <div class="col-md-6 d-flex">
-                                <div class="form-group mr-4">
-                                    <label for="">Arrival Date</label>
-                                    <input type="text" class="form-control" id="arrival_date" placeholder="Date">
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Arrival Time</label>
-                                    <input type="text" class="form-control" id="arrival_time" placeholder="Time">
-                                </div>
-                            </div>
-                            <div class="col-md-6 d-flex">
-                                <div class="form-group mr-4">
-                                    <label for="">Departure Date</label>
-                                    <input type="text" class="form-control" id="departure_date" placeholder="Date">
-                                </div>
-                                <div class="form-group">
-                                    <label for="">Departure Time</label>
-                                    <input type="text" class="form-control" id="arrival_time" placeholder="Time">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-5">
-                            <div class="col-md-12">
-                                <h2 class="mb-4">Payment Details</h2>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="">Card Type</label>
+                                    <label for="">Select meal</label>
                                     <div class="select-wrap one-third">
                                         <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                                        <select name="" id="" class="form-control">
-                                            <option value="">Visa</option>
-                                            <option value="">Master Card</option>
-                                            <option value="">Credit Card</option>
-                                        </select>
+                                        <select class="countrypicker form-control" data-live-search="true"
+                                                data-default="Country of Passport" data-flag="false"></select>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="name">Card No</label>
-                                    <input type="text" class="form-control" placeholder="">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label for="name">Name on Card</label>
-                                    <input type="text" class="form-control" placeholder="">
-                                </div>
-                            </div>
                             <div class="col-md-6">
-                                <div class="form-group mr-4">
-                                    <label for="">Expiration Date</label>
-                                    <input type="text" class="form-control" id="expiration_date" placeholder="">
+                                <div class="form-group">
+                                    <label for=""></label>
+                                    <input style="margin-top: 40px; float: right" type="submit" class="search-submit btn btn-primary" value="Book">
                                 </div>
                             </div>
+
                         </div>
                     </form>
                 </div>
