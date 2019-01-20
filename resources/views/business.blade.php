@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row justify-content-center mb-5 pb-5">
                 <div class="col-md-7 text-center heading-section ftco-animate">
-                    <span class="subheading">Our Rooms</span>
+                    <span class="subheading">Our conference rooms</span>
                     <h2>Explore our rooms</h2>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                                                 <h3><a href="#">{{$room->name}}</a></h3>
                                             </div>
                                             <div class="one-forth text-center">
-                                                <p class="price">{{$room->price}}€ <br><span>/night</span></p>
+                                                <p class="price">{{$room->price}}€ <br><span>/day</span></p>
                                             </div>
                                         </div>
                                         <p class="features">

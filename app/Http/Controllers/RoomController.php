@@ -19,6 +19,6 @@ class RoomController extends Controller
 
     function roomsBusiness(){
         $rooms=RoomCategory::where('business',1)->get();
-        return view( 'amenities' , ['rooms'=>$rooms, 'breadcrumb'=>'business','title'=>'Business']);
+        return view( 'business' , ['rooms'=>$rooms, 'breadcrumb'=>'business','title'=>'Business']);
     }
 }

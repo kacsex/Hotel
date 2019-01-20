@@ -11,7 +11,7 @@
                 <li class="nav-item {{ request()->is('home*') ? 'active' : '' }}"><a href="{{ URL::to('home') }}" class="nav-link">Home</a></li>
                 <li class="nav-item {{ request()->is('rooms*') ? 'active' : '' }}"><a href="{{ URL::to('rooms') }}" class="nav-link">Rooms</a></li>
                 <li class="nav-item {{ request()->is('dining*') ? 'active' : '' }}"><a href="{{ URL::to('dining') }}" class="nav-link">Dining &amp; Bar</a></li>
-                <li class="nav-item {{ request()->is('amenities*') ? 'active' : '' }}"><a href="{{ URL::to('amenities') }}" class="nav-link">Amenities</a></li>
+                <li class="nav-item {{ request()->is('business*') ? 'active' : '' }}"><a href="{{ URL::to('business') }}" class="nav-link">Business</a></li>
                 <li class="nav-item {{ request()->is('booking*') ? 'active' : '' }}"><a href="{{ URL::to('booking') }}" class="nav-link">Booking</a></li>
                 <li class="nav-item {{ request()->is('contact*') ? 'active' : '' }}"><a href="{{ URL::to('contact') }}" class="nav-link">Contact</a></li>
                 <li class="nav-item {{ request()->is('login*') ? 'active' : '' }}"><a href="/admin/login" class="nav-link">Login</a></li>
