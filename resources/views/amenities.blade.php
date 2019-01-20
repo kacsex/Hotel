@@ -3,44 +3,29 @@
 @section('_content')
     <section class="ftco-section bg-light">
         <div class="container">
-            <div class="row no-gutters">
-                <div class="amenities d-md-flex ftco-animate">
-                    <div class="one-half order-first img" style="background-image: url({!! asset('theme/images/amenities-1.jpg') !!});"></div>
-                    <div class="one-half order-last text">
-                        <h2>Business Center</h2>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost
-                            unorthographic life One day however a small line of blind text by the name of Lorem Ipsum
-                            decided to leave for the far World of Grammar.</p>
+            <div class="row">
+                @foreach ($rooms as $room)
+                <div class="col-md-4 ftco-animate">
+                    <div class="room-wrap">
+                        <div class="text p-4">
+                            <div class="d-flex mb-1">
+                                <div class="one-third">
+                                    <h3><a href="#">{{$room->name}}</a></h3>
+                                </div>
+                                <div class="one-forth text-center">
+                                    <p class="price">{{$room->price}}€ <br><span>/night</span></p>
+                                </div>
+                            </div>
+                            <p class="features">
+                                <span class="d-block mb-2"><i class="icon-check mr-2"></i> {{$room->description}}</span>
+                            </p>
+                            <p class="features">
+                                <span class="d-block mb-2"><i class="icon-check mr-2"></i>Para {{$room->size}} personas</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="amenities d-md-flex ftco-animate">
-                    <div class="one-half order-last img" style="background-image: url({!! asset('theme/images/amenities-2.jpg') !!});"></div>
-                    <div class="one-half order-first text">
-                        <h2>Cozy Restaurant</h2>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost
-                            unorthographic life One day however a small line of blind text by the name of Lorem Ipsum
-                            decided to leave for the far World of Grammar.</p>
-                    </div>
-                </div>
-                <div class="amenities d-md-flex ftco-animate">
-                    <div class="one-half order-first img" style="background-image: url({!! asset('theme/images/amenities-3.jpg') !!});"></div>
-                    <div class="one-half order-last text">
-                        <h2>Meeting &amp; Conferences</h2>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost
-                            unorthographic life One day however a small line of blind text by the name of Lorem Ipsum
-                            decided to leave for the far World of Grammar.</p>
-                    </div>
-                </div>
-                <div class="amenities d-md-flex ftco-animate">
-                    <div class="one-half order-last img" style="background-image: url({!! asset('theme/images/amenities-4.jpg') !!});"></div>
-                    <div class="one-half order-first text">
-                        <h2>Airport Shuttle &amp; Parking Lot</h2>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost
-                            unorthographic life One day however a small line of blind text by the name of Lorem Ipsum
-                            decided to leave for the far World of Grammar.</p>
-                    </div>
-                </div>
-
+                @endforeach
             </div>
         </div>
     </section>

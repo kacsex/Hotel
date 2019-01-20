@@ -13,7 +13,12 @@ class RoomController extends Controller
     }
 
     function rooms(){
-        $rooms=Room::all();
+        $rooms=RoomCategory::where('business',0)->get();
         return view( 'rooms' , ['rooms'=>$rooms, 'breadcrumb'=>'rooms','title'=>'Rooms']);
+    }
+
+    function roomsBusiness(){
+        $rooms=RoomCategory::where('business',1)->get();
+        return view( 'amenities' , ['rooms'=>$rooms, 'breadcrumb'=>'business','title'=>'Business']);
     }
 }
