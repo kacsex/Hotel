@@ -35,7 +35,7 @@
 </head>
 <body>
 @include('_header')
-@if(!Request::is('home') && !Request::is('login') && !Request::is('/'))
+@if(!Request::is('home') && !Request::is('login') && !Request::is('home/search'))
     @include('_carousel')
 @endif
 @yield('_content')

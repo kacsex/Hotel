@@ -19,17 +19,13 @@ Route::get('/about', function () {
     return view('about', ['title' => 'About Us', 'breadcrumb' => 'about']);
 });
 
-Route::get('/rooms', function () {
-    return view('rooms', ['title' => 'Choose Our Rooms', 'breadcrumb' => 'rooms']);
-});
+Route::get('/rooms', 'RoomController@rooms');
 
 Route::get('/dining', function () {
     return view('dining', ['title' => 'Discover Our Menus', 'breadcrumb' => 'dining']);
 });
 
-Route::get('/amenities', function () {
-    return view('amenities', ['title' => 'Accomodation & Amenities', 'breadcrumb' => 'amenities']);
-});
+Route::get('/amenities', 'RoomController@roomsBusiness');
 
 Route::get('/booking', function () {
     return view('booking', ['title' => 'Booking', 'breadcrumb' => 'booking']);
@@ -41,6 +37,7 @@ Route::get('/contact', function () {
 
 
 Route::get('home', 'HomeController@home');
+Route::get('home/search', 'HomeController@roomsSearch');
 
 
 
