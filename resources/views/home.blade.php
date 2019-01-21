@@ -111,7 +111,6 @@
                                             <p><a href="#" class="btn btn-primary">Reserve a room</a></p>
                                         </div>
                                     </div>
-
                                 </div>
                             @endforeach
                         </div>
