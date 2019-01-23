@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\RoomCategory;
 use App\Room;
 
 class HomeController extends Controller
@@ -14,7 +15,6 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-
     }
 
     /**
@@ -22,41 +22,39 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function home()
+    public function index()
     {
         return view('home');
     }
 
+    public function home()
+    {
+        return view('home');
+    }
     public function about()
     {
         return view('about');
     }
-
     public function booking()
     {
         return view('booking');
     }
-
     public function rooms()
     {
         return view('rooms',['rooms'=>null]);
     }
-
     public function amenities()
     {
         return view('amenities');
     }
-
     public function dining()
     {
         return view('dining');
     }
-
     public function contact()
     {
         return view('contact');
     }
-
     public function roomsSearch(Request $request)
     {
         $business = $request->input("gente");

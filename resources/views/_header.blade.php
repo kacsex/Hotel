@@ -8,13 +8,16 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item {{ request()->is('home*') ? 'active' : '' }}"><a href="{{ URL::to('home') }}" class="nav-link">Home</a></li>
-                <li class="nav-item {{ request()->is('rooms*') ? 'active' : '' }}"><a href="{{ URL::to('rooms') }}" class="nav-link">Rooms</a></li>
-                <li class="nav-item {{ request()->is('dining*') ? 'active' : '' }}"><a href="{{ URL::to('dining') }}" class="nav-link">Dining &amp; Bar</a></li>
-                <li class="nav-item {{ request()->is('business*') ? 'active' : '' }}"><a href="{{ URL::to('business') }}" class="nav-link">Business</a></li>
-                <li class="nav-item {{ request()->is('booking*') ? 'active' : '' }}"><a href="{{ URL::to('booking') }}" class="nav-link">Booking</a></li>
-                <li class="nav-item {{ request()->is('contact*') ? 'active' : '' }}"><a href="{{ URL::to('contact') }}" class="nav-link">Contact</a></li>
-                <li class="nav-item {{ request()->is('login*') ? 'active' : '' }}"><a href="/admin/login" class="nav-link">Login</a></li>
+                <li class="nav-item {{ request()->is('home*') ? 'active' : '' }}{{ request()->is('login*') ? 'active' : '' }} {{ request()->is('register*') ? 'active' : '' }}"><a href="{{ URL::to('home') }}" class="nav-link">Home</a></li>
+                <li class="nav-item {{ request()->is('rooms*') ? 'active' : '' }}{{ request()->is('login*') ? 'active' : '' }} {{ request()->is('register*') ? 'active' : '' }}"><a href="{{ URL::to('rooms') }}" class="nav-link">Rooms</a></li>
+                <li class="nav-item {{ request()->is('dining*') ? 'active' : '' }}{{ request()->is('login*') ? 'active' : '' }} {{ request()->is('register*') ? 'active' : '' }}"><a href="{{ URL::to('dining') }}" class="nav-link">Dining &amp; Bar</a></li>
+                <li class="nav-item {{ request()->is('amenities*') ? 'active' : '' }} {{ request()->is('login*') ? 'active' : '' }} {{ request()->is('register*') ? 'active' : '' }}"><a href="{{ URL::to('amenities') }}" class="nav-link">Amenities</a></li>
+                <li class="nav-item {{ request()->is('booking*') ? 'active' : '' }} {{ request()->is('login*') ? 'active' : '' }} {{ request()->is('register*') ? 'active' : '' }}"><a href="{{ URL::to('booking') }}" class="nav-link">Booking</a></li>
+                <li class="nav-item {{ request()->is('contact*') ? 'active' : '' }} {{ request()->is('login*') ? 'active' : '' }} {{ request()->is('register*') ? 'active' : '' }}"><a href="{{ URL::to('contact') }}" class="nav-link">Contact</a></li>
+                <li class="nav-item {{ request()->is('login*') ? 'active' : '' }} {{ request()->is('register*') ? 'active' : '' }}"><a href="/login" class="nav-link">Login</a></li>
+                @if(Auth::Check())
+                    <li class="nav-item active"><a href="/logout" class="nav-link">Logout</a></li>
+                @endif
             </ul>
         </div>
     </div>

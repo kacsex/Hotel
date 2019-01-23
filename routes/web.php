@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home', ['title' => '', 'breadcrumb' => '']);
-});
+Route::get('/', 'HomeController@home');
 
 Route::get('/about', function () {
     return view('about', ['title' => 'About Us', 'breadcrumb' => 'about']);
@@ -45,3 +43,8 @@ Route::get('home/search', 'HomeController@roomsSearch');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Auth::routes();
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+
