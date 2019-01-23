@@ -96,7 +96,7 @@
                     <div class="col-md-12 ftco-animate">
                         <div class="carousel-room owl-carousel">
                             @foreach ($rooms as $room)
-                            <form action="{!! route('book.post', ['id'=>$room->id, 'meal'=>$mealS,'dateF'=>$dateF,'dateT'=>$dateT]) !!}" method="POST">
+                            <form action="{!! route('book.post', ['id'=>$room->id, 'meal'=>$mealS->id,'dateF'=>$dateF,'dateT'=>$dateT]) !!}" method="POST">
                                 @csrf
                                 <div class="item">
                                     <div class="room-wrap">
@@ -112,7 +112,7 @@
                                                     <h3><a href="#">{{$room->category->name}}</a></h3>
                                                 </div>
                                                 <div class="one-forth text-center">
-                                                    <p class="price">{{$room->category->price}}€ <br><span>/night</span></p>
+                                                    <p class="price">{{$room->category->price+$mealS->price}}€ <br><span>/night</span></p>
                                                 </div>
                                             </div>
                                             <p class="features">

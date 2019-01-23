@@ -63,7 +63,7 @@ class HomeController extends Controller
         $business = $request->input("gente");
         $dateFrom = date("Y-m-d",strtotime($request->input("checkin_date")));
         $dateUntil = date("Y-m-d",strtotime( $request->input("checkout_date")));
-        $meal = $request->input("meal");
+        $meal = Meal::find($request->input("meal"));
         if ($business == 5){
             $category = Room::join('room_categories', 'room_categories.id', 'id_category')->where('room_categories.business', 1)->pluck('rooms.id');
             $roomsOut = Room::leftJoin('bookings', 'bookings.id_room','rooms.id')->whereIn('rooms.id', $category)->where(function ( $query ) use ($dateFrom,$dateUntil) {
