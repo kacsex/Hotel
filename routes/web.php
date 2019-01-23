@@ -23,7 +23,7 @@ Route::get('/dining', function () {
     return view('dining', ['title' => 'Discover Our Menus', 'breadcrumb' => 'dining']);
 });
 
-Route::get('/business', 'RoomController@roomsBusiness');
+Route::get('/amenities', 'RoomController@roomsBusiness');
 
 Route::get('/booking', function () {
     return view('booking', ['title' => 'Booking', 'breadcrumb' => 'booking']);
@@ -46,5 +46,6 @@ Route::group(['prefix' => 'admin'], function () {
 
 Auth::routes();
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::post('/book/{id}/{meal}/{dateF}/{dateT}', ['as' => 'book.post', 'uses' => 'BookingController@book']);
 
 

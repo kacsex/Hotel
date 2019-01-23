@@ -14,8 +14,9 @@
                 <li class="nav-item {{ request()->is('amenities*') ? 'active' : '' }} {{ request()->is('login*') ? 'active' : '' }} {{ request()->is('register*') ? 'active' : '' }}"><a href="{{ URL::to('amenities') }}" class="nav-link">Amenities</a></li>
                 <li class="nav-item {{ request()->is('booking*') ? 'active' : '' }} {{ request()->is('login*') ? 'active' : '' }} {{ request()->is('register*') ? 'active' : '' }}"><a href="{{ URL::to('booking') }}" class="nav-link">Booking</a></li>
                 <li class="nav-item {{ request()->is('contact*') ? 'active' : '' }} {{ request()->is('login*') ? 'active' : '' }} {{ request()->is('register*') ? 'active' : '' }}"><a href="{{ URL::to('contact') }}" class="nav-link">Contact</a></li>
+                @if(!Auth::Check())
                 <li class="nav-item {{ request()->is('login*') ? 'active' : '' }} {{ request()->is('register*') ? 'active' : '' }}"><a href="/login" class="nav-link">Login</a></li>
-                @if(Auth::Check())
+                @else
                     <li class="nav-item active"><a href="/logout" class="nav-link">Logout</a></li>
                 @endif
             </ul>

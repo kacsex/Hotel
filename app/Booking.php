@@ -10,7 +10,7 @@ class Booking extends Model
     public $primaryKey = "id";
     public $incrementing = true;
     public $timestamps = false;
-    protected $fillable = ['id', 'id_user', 'id_room', 'id_meal', 'date_from', 'date_to'];
+    protected $fillable = ['id', 'id_user', 'id_room', 'id_meal', 'date_from', 'date_to',];
 
     public function user() {
         return $this->hasOne('App\User', 'id', 'id_user');
