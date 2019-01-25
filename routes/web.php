@@ -25,8 +25,6 @@ Route::get('/dining', function () {
 
 Route::get('/amenities', 'RoomController@roomsBusiness');
 
-Route::get('/booking', 'BookingController@booking');
-
 Route::get('/contact', function () {
     return view('contact', ['title' => 'Contact Us', 'breadcrumb' => 'contact']);
 });
@@ -44,6 +42,8 @@ Route::group(['prefix' => 'admin'], function () {
 
 Auth::routes();
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
-Route::post('/book/{id}/{meal}/{dateF}/{dateT}', ['as' => 'book.post', 'uses' => 'BookingController@book']);
-
+Route::group(['middleware' => ['auth']], function () {
+    Route::post('/book/{id}/{meal}/{dateF}/{dateT}', ['as' => 'book.post', 'uses' => 'BookingController@book']);
+    Route::get('/booking', 'BookingController@booking');
+});
 
