@@ -19,7 +19,7 @@ class User extends \TCG\Voyager\Models\User
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','role_id',
     ];
 
     /**
@@ -30,4 +30,8 @@ class User extends \TCG\Voyager\Models\User
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function booking() {
+        return $this->hasMany('App\Booking');
+    }
 }

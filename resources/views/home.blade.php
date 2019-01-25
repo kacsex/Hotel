@@ -70,6 +70,17 @@
                                         </select>
                                     </div>
                                 </div>
+                                <div class="one-third">
+                                    <label for="Guest">Meal type:</label>
+                                    <div class="select-wrap">
+                                        <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                                        <select name="meal" id="meal" class="form-control">
+                                            @foreach ($meals as $meal)
+                                                <option value={{$meal->id}}>{{$meal->name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
                             <input type="submit" class="search-submit btn btn-primary" value="Check Availability">
                         </form>
@@ -85,6 +96,8 @@
                     <div class="col-md-12 ftco-animate">
                         <div class="carousel-room owl-carousel">
                             @foreach ($rooms as $room)
+                            <form action="{!! route('book.post', ['id'=>$room->id, 'meal'=>$mealS->id,'dateF'=>$dateF,'dateT'=>$dateT]) !!}" method="POST">
+                                @csrf
                                 <div class="item">
                                     <div class="room-wrap">
                                         <a href="#" class="room-img"
@@ -99,7 +112,7 @@
                                                     <h3><a href="#">{{$room->category->name}}</a></h3>
                                                 </div>
                                                 <div class="one-forth text-center">
-                                                    <p class="price">{{$room->category->price}}€ <br><span>/night</span></p>
+                                                    <p class="price">{{$room->category->price+$mealS->price}}€ <br><span>/night</span></p>
                                                 </div>
                                             </div>
                                             <p class="features">
@@ -108,10 +121,11 @@
                                                 <span class="d-block mb-2"><i
                                                             class="icon-check mr-2"></i>Number: {{$room->number}}</span>
                                             </p>
-                                            <p><a href="#" class="btn btn-primary">Reserve a room</a></p>
+                                            <p><input type="submit" class="search-submit btn btn-primary" value="Book"></p>
                                         </div>
                                     </div>
                                 </div>
+                            </form>
                             @endforeach
                         </div>
                     </div>

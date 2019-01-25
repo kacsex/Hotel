@@ -11,7 +11,7 @@ class Room extends Model
     public $primaryKey = "id";
     public $incrementing = true;
     public $timestamps = false;
-    protected $fillable = ['id', 'id_category', 'floor', 'number', 'active', 'booked'];
+    protected $fillable = ['id','id_category', 'floor', 'number', 'active', 'booked'];
 
     public function category() {
         return $this->hasOne('App\RoomCategory', 'id', 'id_category');

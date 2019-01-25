@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home', ['title' => '', 'breadcrumb' => '']);
-});
+Route::get('/', 'HomeController@home');
 
 Route::get('/about', function () {
     return view('about', ['title' => 'About Us', 'breadcrumb' => 'about']);
@@ -25,11 +23,7 @@ Route::get('/dining', function () {
     return view('dining', ['title' => 'Discover Our Menus', 'breadcrumb' => 'dining']);
 });
 
-Route::get('/business', 'RoomController@roomsBusiness');
-
-Route::get('/booking', function () {
-    return view('booking', ['title' => 'Booking', 'breadcrumb' => 'booking']);
-});
+Route::get('/amenities', 'RoomController@roomsBusiness');
 
 Route::get('/contact', function () {
     return view('contact', ['title' => 'Contact Us', 'breadcrumb' => 'contact']);
@@ -45,3 +39,11 @@ Route::get('home/search', 'HomeController@roomsSearch');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Auth::routes();
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::group(['middleware' => ['auth']], function () {
+    Route::post('/book/{id}/{meal}/{dateF}/{dateT}', ['as' => 'book.post', 'uses' => 'BookingController@book']);
+    Route::get('/booking', 'BookingController@booking');
+});
+
