@@ -5,7 +5,7 @@ use App\Room;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Booking;
-
+use Mail;
 class BookingController extends Controller
 {
     function book($id, $meal,$dateF,$dateT){
@@ -21,6 +21,14 @@ class BookingController extends Controller
         $room = Room::find($id);
         $room->booked=true;
         $room->save();
+        $to_name = Auth::user()->name;
+        $to_email = Auth::user()->email;
+        $data = array('name'=>$to_name, "body" => "You have reserved a room at JutaVit");
+        Mail::send('emails.mail', $data, function($message) use ($to_name, $to_email) {
+            $message->to($to_email, $to_name)
+                ->subject('Hotel');
+            $message->from('jorgriq97@gmail.com','Hotel Web');
+        });
         return redirect('home');
     }
 
