@@ -77,7 +77,7 @@ class HomeController extends Controller
             $category = Room::join('room_categories', 'room_categories.id', 'id_category')->where('room_categories.business', 0)->where('rooms.active',1)->where('room_categories.size', $business)->pluck('rooms.id');
             $roomsOut = Room::leftJoin('bookings', 'bookings.id_room','rooms.id')->whereIn('rooms.id', $category)->where(function ( $query ) use ($dateFrom,$dateUntil) {
                 $query->where( 'rooms.booked',false)->orWhere(function($query)use ($dateFrom,$dateUntil) {
-                    $query->where('bookings.date_to','<', $dateFrom)->orWhere('bookings.date_from','>', $dateUntil);
+                    $query->where('bookings.date_to','=<', $dateFrom)->orWhere('bookings.date_from','>=', $dateUntil);
                 });
             })->get(['rooms.*']);
             return view( 'home' ,  ['rooms'=>$roomsOut,'meals'=>$meals,'mealS'=>$meal,'dateF'=>$dateFrom,'dateT'=>$dateUntil]);
