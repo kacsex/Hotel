@@ -12,7 +12,7 @@ class BookingController extends Controller
         $dateFrom = date("Y-m-d",strtotime($dateF));
         $dateUntil = date("Y-m-d",strtotime( $dateT));
         $book=new Booking();
-        $book->id_meal=1;
+        $book->id_meal=$meal;
         $book->id_room=$id;
         $book->id_user=Auth::id();
         $book->date_from=$dateFrom;

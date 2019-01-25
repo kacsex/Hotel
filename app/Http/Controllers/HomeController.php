@@ -81,6 +81,17 @@ class HomeController extends Controller
             })->get(['rooms.*']);
             return view( 'home' ,  ['rooms'=>$roomsOut,'meals'=>$meals,'mealS'=>$meal,'dateF'=>$dateFrom,'dateT'=>$dateUntil]);
         }
+
+        $to_name = Auth::user()->name;
+        $to_email = Auth::user()->email;
+        $data = array('name'=>"Sam Jose", "body" => "You have reserved a room at JutaVit");
+
+        Mail::send('emails.mail', $data, function($message) use ($to_name, $to_email) {
+            $message->to($to_email, $to_name)
+                ->subject('Hotel');
+            $message->from('jorgriq97@gmail.com','Hotel Web');
+        });
+
         return view( 'home');
     }
 }
