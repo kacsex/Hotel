@@ -23,4 +23,9 @@ class BookingController extends Controller
         $room->save();
         return redirect('home');
     }
+
+    function booking(){
+        $bookings = Booking::where('id_user',Auth::id())->get();
+        return view('booking',['bookings'=>$bookings,'title' => 'Booking', 'breadcrumb' => 'booking']);
+    }
 }
